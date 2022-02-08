@@ -37,15 +37,12 @@ function handleSubmitFormCreate(event) {
         todo[name] = value
     }
     data.push(todo)
-
     render(data)
-
     formCreateElement.reset()
 }
 
 
-function todoTemplate({ title, id, isChecked, createdAt, estimate, priority, isEdit }) {
-
+function todoTemplate({ title, id, isChecked, createdAt, estimate, priority}) {
     const dateCreateAt = buildDate(createdAt)
     let priorityForm = `${priority}`
     priorityForm = buildPriorityForm(priorityForm)
@@ -103,7 +100,6 @@ function handleTodoChange(event) {
 
 function render(todoList) {
     let result = ''
-
     todoList.forEach((todo) => {
         const template = todoTemplate(todo)
         result = result + template
